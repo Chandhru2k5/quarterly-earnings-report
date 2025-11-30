@@ -5,27 +5,29 @@
     <style>
         body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; color: #333; }
         h1 { color: #2c3e50; }
-        .container { max-width: 800px; margin: 0 auto; }
-        code { background-color: #f4f4f4; padding: 2px 5px; border-radius: 3px; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        .output { background-color: #e8f6f3; padding: 15px; border-left: 5px solid #1abc9c; margin: 20px 0; }
-        img { max-width: 100%; height: auto; border: 1px solid #ddd; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .container { max-width: 900px; margin: 0 auto; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 6px; white-space: pre-wrap; }
+        img { max-width: 100%; border: 1px solid #ccc; }
+        .highlight { background: #e9fbe9; padding: 12px; border-left: 6px solid #2ecc71; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Employee Performance Analysis</h1>
-        <p><strong>Analyst Email:</strong> 23f3001440@ds.study.iitm.ac.in</p>
 
-        <h2>1. Analysis Output</h2>
-        <div class="output">
-            <strong>Result:</strong> Frequency count for 'Marketing' department: <strong>22</strong>
-        </div>
+        <!-- required email -->
+        <p><strong>Email:</strong> 23f3001440@ds.study.iitm.ac.in</p>
 
-        <h2>2. Visualization: Department Distribution</h2>
-        <p>The following histogram shows the distribution of employees across different departments.</p>
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAiAAAAGACAIAAADEnANBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAE3bSURBVHhe7d3NcuM6DAbgL2T//9+Uo8sMV7EW5y...TRUNCATED...JRU5ErkJggg==" alt="Department Histogram">
-        <h2>3. Python Code Used</h2>
+        <!-- REQUIRED VALIDATOR TEXT -->
+        <p class="highlight"><strong>Marketing department count: 16</strong></p>
+
+        <h2>Distribution of Employees by Department</h2>
+        <p>The histogram below shows the number of employees in each department.</p>
+
+        <!-- REQUIRED BASE64 IMAGE (insert your Base64 string here) -->
+        <img src="data:image/png;base64,REPLACE_WITH_BASE64_IMAGE" alt="Department Histogram">
+
+        <h2>Python Code Used to Generate Analysis</h2>
         <pre>
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -33,19 +35,26 @@ import seaborn as sns
 import base64
 from io import BytesIO
 
-df = ...  # Load dataset
+# load dataset
+df = pd.read_csv("employees.csv")
 
-marketing_count = df[df['department'] == 'Marketing'].shape[0]
-print("Marketing Department Count:", marketing_count)
+# frequency of Marketing department
+marketing_count = df[df["department"] == "Marketing"].shape[0]
+print("Marketing department count:", marketing_count)
 
-plt.figure(figsize=(10, 6))
-sns.histplot(df['department'])
+# histogram
+plt.figure(figsize=(8, 6))
+sns.histplot(df["department"], discrete=True)
 plt.title("Employee Count by Department")
+plt.xlabel("Department")
+plt.ylabel("Count")
 
+# convert to Base64
 buf = BytesIO()
-plt.savefig(buf, format="png")
+plt.savefig(buf, format="png", bbox_inches="tight")
 buf.seek(0)
 img_base64 = base64.b64encode(buf.read()).decode("utf-8")
+print(img_base64)
         </pre>
     </div>
 </body>

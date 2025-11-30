@@ -6,32 +6,72 @@ footer: '23f3001440@ds.study.iitm.ac.in'
 style: |
   section {
     background-color: #ffffff;
-    color: #222;
-    font-family: Arial, sans-serif;
+    color: #333;
   }
   h1 {
-    color: #005bbb;
+    color: #0066cc;
   }
 ---
 
-# Product Documentation
+# API Documentation
 
-Modern technical documentation built using **Marp**  
-**Contact:** 23f3001440@ds.study.iitm.ac.in
+Simple Product Documentation Guide
+
+**Contact**: 24f1001771@ds.study.iitm.ac.in
 
 ---
 
 ## Getting Started
 
-Welcome to the official product documentation.  
-This guide covers architecture, APIs, performance, and deployment.
+This documentation covers our REST API with simple examples.
 
 ---
 
-## API Authentication
+## Authentication
 
-Use API key in request header:
+Use API key in header:
 
 ```bash
-curl -H "Authorization: Bearer YOUR_API_KEY" \
+curl -H "Authorization: Bearer YOUR_KEY" \
   https://api.example.com/data
+```
+
+---
+![bg fit](url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200'))
+<!-- backgroundImage: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200') -->
+<!-- _color: white -->
+
+# Core Features
+
+- Fast performance
+- Easy integration
+- Secure by default
+
+---
+
+## Performance
+
+### Time Complexity
+
+Search operations: $O(log n)$
+
+### Upload Formula
+
+Optimal chunks equals file size divided by 4MB
+
+---
+
+## Error Codes
+
+| Code | Meaning |
+|------|---------|
+| 200 | Success |
+| 400 | Bad Request |
+| 401 | Unauthorized |
+| 404 | Not Found |
+
+---
+
+# Thank You
+
+Questions? Contact: 23f3001440@ds.study.iitm.ac.in

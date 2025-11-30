@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Performance Analysis</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; color: #333; }
+        h1 { color: #2c3e50; }
+        .container { max-width: 800px; margin: 0 auto; }
+        code { background-color: #f4f4f4; padding: 2px 5px; border-radius: 3px; }
+        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        .output { background-color: #e8f6f3; padding: 15px; border-left: 5px solid #1abc9c; margin: 20px 0; }
+        img { max-width: 100%; height: auto; border: 1px solid #ddd; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Performance Analysis</h1>
+        <p><strong>Analyst Email:</strong> 23f3001440@ds.study.iitm.ac.in</p>
+
+        <h2>1. Analysis Output</h2>
+        <div class="output">
+            <strong>Result:</strong> Frequency count for 'Marketing' department: <strong>22</strong>
+        </div>
+
+        <h2>2. Visualization: Department Distribution</h2>
+        <p>The following histogram shows the distribution of employees across different departments.</p>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAiAAAAGACAIAAADEnANBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAE3bSURBVHhe7d3NcuM6DAbgL2T//9+Uo8sMV7EW5y...TRUNCATED...JRU5ErkJggg==" alt="Department Histogram">
+        <h2>3. Python Code Used</h2>
+        <pre>
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import base64
+from io import BytesIO
+
+df = ...  # Load dataset
+
+marketing_count = df[df['department'] == 'Marketing'].shape[0]
+print("Marketing Department Count:", marketing_count)
+
+plt.figure(figsize=(10, 6))
+sns.histplot(df['department'])
+plt.title("Employee Count by Department")
+
+buf = BytesIO()
+plt.savefig(buf, format="png")
+buf.seek(0)
+img_base64 = base64.b64encode(buf.read()).decode("utf-8")
+        </pre>
+    </div>
+</body>
+</html>

@@ -1,179 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Q2 Quarterly Earnings – Interactive Report</title>
+<head>
+<meta charset="utf-8" />
+<title>Q2 Quarterly Earnings – Interactive RevealJS Report</title>
 
-    <!-- RevealJS core + theme -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css" id="theme" />
+<!-- RevealJS Core -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/theme/white.css" id="theme">
 
-    <!-- Code highlighting theme -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css" />
+<!-- Code Highlight -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/plugin/highlight/monokai.css">
 
-    <style>
-      .reveal {
-        font-family: "Arial", sans-serif;
-      }
-      .kpi {
-        font-size: 1.4rem;
-        margin-top: 1rem;
-      }
-      .kpi span.value {
-        font-weight: bold;
-      }
-    </style>
-  </head>
+<!-- KaTeX for Math -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css">
 
-  <body>
-    <div class="reveal">
-      <div class="slides">
+<style>
+.footer-email {
+    position:absolute;
+    bottom:10px;
+    right:20px;
+    opacity:0.75;
+    font-size:14px;
+}
+</style>
+</head>
 
-        <!-- SLIDE 1 (email included here) -->
-        <section>
-          <h1>Q2 Quarterly Earnings Report</h1>
-          <h3>Interactive Technical Presentation</h3>
-          <p><strong>Technical Consultant – Major Financial Institution</strong></p>
-          <p><strong>Email: 23f3001440@ds.study.iitm.ac.in</strong></p>
+<body>
+<div class="reveal">
+<div class="slides">
 
-          <aside class="notes">
-            Introduce your role and mention that this deck demonstrates modern interactive reporting with RevealJS.
-          </aside>
-        </section>
+<!-- SLIDE 1 (EMAIL REQUIRED) -->
+<section>
+  <h1>Q2 Quarterly Earnings Report</h1>
+  <h3>Interactive Technical Presentation</h3>
+  <p><b>Email: 23f3001440@ds.study.iitm.ac.in</b></p>
 
-        <!-- SLIDE 2 - MARKDOWN SLIDE -->
-        <section data-markdown>
-          <textarea data-template>
-## Agenda
+  <p class="fragment fade-in">Modern business reporting using RevealJS</p>
+  <p class="fragment fade-up">Live code · Math formulas · Interactive features</p>
 
-- Business Overview
-- Key Financial Metrics
-- Revenue Growth Analysis
-- Risk & Sensitivity
-- Technology Stack (RevealJS, GitHub Pages)
+  <div class="footer-email">23f3001440@ds.study.iitm.ac.in</div>
+
+  <aside class="notes">Introduce yourself and highlight modern interactive reporting.</aside>
+</section>
+
+<!-- MARKDOWN SLIDE -->
+<section data-markdown>
+<textarea data-template>
+## 📌 Executive Agenda  
+Author — **23f3001440@ds.study.iitm.ac.in**
+
+- Business Overview  
+- Key Performance Indicators  
+- Revenue Growth Model  
+- Risk Sensitivity  
+- Future Roadmap  
 
 ---
+### Why RevealJS?
+- Supports **Markdown**
+- Shows **live code**
+- Displays **math formulas**
+- Enables **interactive visualization**
+</textarea>
 
-## Why Interactive Presentation?
+<aside class="notes">Explain why web-based reporting is powerful and scalable.</aside>
+</section>
 
-- Clear audit trail between assumptions → formulas → output
-- Code and math visible to stakeholders
-- Live data visualization ready (future automation)
-          </textarea>
+<!-- SLIDE WITH KPI + FRAGMENTS -->
+<section>
+  <h2>Financial Highlights</h2>
+  <p class="fragment">Revenue: <b>$1.25B</b> (+12% YoY)</p>
+  <p class="fragment">Net Income: <b>$210M</b> (+8% YoY)</p>
+  <p class="fragment fade-up">EPS: <b>$1.45</b> (+6% YoY)</p>
+  <p class="fragment fade-left">ROE: <b>14.2%</b></p>
 
-          <aside class="notes">
-            Mention that this slide is completely Markdown-powered using Reveal markdown plugin.
-          </aside>
-        </section>
+  <div class="footer-email">23f3001440@ds.study.iitm.ac.in</div>
 
-        <!-- SLIDE 3 - KPI WITH FRAGMENTS -->
-        <section>
-          <h2>Key Financial Highlights</h2>
-          <p class="kpi fragment">Revenue: <span class="value">$1.25B</span> (+12% YoY)</p>
-          <p class="kpi fragment">Net Income: <span class="value">$210M</span> (+8% YoY)</p>
-          <p class="kpi fragment fade-up">EPS: <span class="value">$1.45</span> (+6% YoY)</p>
-          <p class="kpi fragment fade-up">ROE: <span class="value">14.2%</span></p>
+  <aside class="notes">Reveal one metric at a time for controlled narrative.</aside>
+</section>
 
-          <aside class="notes">
-            Reveal each KPI slowly to maintain attention and connect to business narrative.
-          </aside>
-        </section>
-
-        <!-- SLIDE 4 — CODE SAMPLE -->
-        <section>
-          <h2>Earnings Calculation — Code Sample</h2>
-          <pre><code class="language-python" data-line-numbers="1-4|6-10|12-14">
+<!-- CODE DISPLAY -->
+<section>
+  <h2>🔍 Earnings Calculation (Python)</h2>
+<pre><code class="language-python">
 import pandas as pd
 
-# Quarterly revenue and expenses
 df = pd.DataFrame({
     "quarter": ["Q1", "Q2"],
-    "revenue": [1_100_000_000, 1_250_000_000],
-    "expense": [900_000_000, 1_040_000_000],
+    "revenue": [1100000000, 1250000000],
+    "expense": [900000000, 1040000000],
 })
 
 df["net_income"] = df["revenue"] - df["expense"]
-df["net_margin"] = df["net_income"] / df["revenue"]
-
-# EPS calculation
-shares_outstanding = 145_000_000
-df["eps"] = df["net_income"] / shares_outstanding
-
+df["eps"] = df["net_income"] / 145000000
 print(df)
-          </code></pre>
+# Author: 23f3001440@ds.study.iitm.ac.in
+</code></pre>
 
-          <aside class="notes">
-            Emphasize transparency — numbers come from reproducible computation, not hand-crafted slides.
-          </aside>
-        </section>
+  <div class="footer-email">23f3001440@ds.study.iitm.ac.in</div>
+</section>
 
-        <!-- SLIDE 5 — MATH EQUATIONS -->
-        <section>
-          <h2>Financial Formulas</h2>
+<!-- MATH SLIDE -->
+<section>
+  <h2>📐 Financial Equation</h2>
 
-          \[
-              \text{Net Income} = \text{Revenue} - \text{Expenses}
-          \]
+  <p class="fragment">\[ EPS = \frac{Net\ Income}{Shares\ Outstanding} \]</p>
+  <p class="fragment">\[ ROE = \frac{Net\ Income}{Avg.\ Shareholders\ Equity} \]</p>
 
-          \[
-              \text{EPS} = \frac{\text{Net Income}}{\text{Shares Outstanding}}
-          \]
+  <div class="footer-email">23f3001440@ds.study.iitm.ac.in</div>
 
-          \[
-              \text{ROE} = \frac{\text{Net Income}}{\text{Average Shareholder Equity}}
-          \]
+  <aside class="notes">Explain meaning of EPS and ROE for investor confidence.</aside>
+</section>
 
-          <aside class="notes">
-            Tie formulas to the computed KPIs and explain importance to investors.
-          </aside>
-        </section>
+<!-- END SLIDE -->
+<section>
+  <h2>📬 Contact</h2>
+  <p>For queries: <b>23f3001440@ds.study.iitm.ac.in</b></p>
+  <p class="fragment grow">Thank you for reviewing the quarterly earnings</p>
 
-        <!-- SLIDE 6 — PLACEHOLDER FOR FUTURE INTERACTIVE CHART -->
-        <section id="revenue-slide">
-          <h2>Interactive Revenue Visualization</h2>
-          <div id="revenue-chart" style="width:80%;height:350px;border:1px dashed #999;display:flex;justify-content:center;align-items:center;">
-            Interactive chart placeholder — ready for D3/Plotly/Observable integration
-          </div>
+  <div class="footer-email">23f3001440@ds.study.iitm.ac.in</div>
+</section>
 
-          <aside class="notes">
-            Mention this slide can later connect to API for real-time dashboards.
-          </aside>
-        </section>
+</div>
+</div>
 
-      </div>
-    </div>
+<!-- RevealJS Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/plugin/math/math.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/plugin/notes/notes.js"></script>
 
-    <!-- RevealJS core -->
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+<script>
+Reveal.initialize({
+  hash: true,
+  plugins: [RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealNotes],
+  highlight: { highlightOnLoad: true }
+});
+</script>
 
-    <!-- Plugins -->
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
-
-    <script>
-      Reveal.initialize({
-        width: 1280,
-        height: 720,
-        margin: 0.04,
-        center: true,
-        controls: true,
-        progress: true,
-        history: true,
-        transition: "slide",
-        plugins: [RevealMarkdown, RevealHighlight, RevealMath, RevealNotes],
-        math: {
-          mathjax: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js",
-          config: "TeX-AMS_HTML"
-        }
-      });
-
-      Reveal.addEventListener("slidechanged", function (event) {
-        if (event.currentSlide.id === "revenue-slide") {
-          console.log("Revenue slide triggered — chart rendering goes here");
-        }
-      });
-    </script>
-  </body>
+</body>
 </html>
